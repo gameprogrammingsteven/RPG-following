@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,5 +32,17 @@ public class PlayerController : MonoBehaviour
         float yVelocity = (Input.GetAxisRaw("Vertical") * Time.deltaTime * playerSpeed);
 
         rigidBody.velocity = new Vector2(hVelocity, yVelocity);
+
+        animator.SetFloat("MoveX", rigidBody.velocity.x);
+        animator.SetFloat("MoveY", rigidBody.velocity.y);
+
+        bool didMove = Mathf.Abs(hVelocity) + Mathf.Abs(yVelocity) > 0;
+        if(didMove)
+        {
+            animator.SetFloat("lastXVelocity", hVelocity);
+            animator.SetFloat("lastYVelocity", yVelocity);
+            Debug.Log("HVel = " + hVelocity);
+            Debug.Log("yVel = " + yVelocity);
+        }
     }
 }
