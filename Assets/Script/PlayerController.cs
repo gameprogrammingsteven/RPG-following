@@ -9,15 +9,26 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed = 800;
 
     public Animator animator;
+    public static PlayerController instance;
 
     bool safeCheck = false;
     // Start is called before the first frame update
     void Start()
     {
+        if(instance == null)
+        {
+            instance = this;
+        } else
+        {
+            Destroy(gameObject);
+        }
+
         if(rigidBody != null && animator != null) //performant safety in code;
         {
             safeCheck = true;
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -41,8 +52,8 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetFloat("lastXVelocity", hVelocity);
             animator.SetFloat("lastYVelocity", yVelocity);
-            Debug.Log("HVel = " + hVelocity);
-            Debug.Log("yVel = " + yVelocity);
+           // Debug.Log("HVel = " + hVelocity);
+           // Debug.Log("yVel = " + yVelocity);
         }
     }
 }
