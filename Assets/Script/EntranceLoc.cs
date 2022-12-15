@@ -5,12 +5,12 @@ using UnityEngine;
 public class EntranceLoc : MonoBehaviour
 {
 
-    public string fromScene;
+    public string fromScene; // null if Edit
 
     // Start is called before the first frame update
     void Start()
     {
-        if(fromScene == PlayerController.instance.fromScene) //User Preferences better.
+        if( (fromScene != null) && (fromScene == PlayerController.instance.fromScene)) //User Preferences better.
         {
             PlayerController.instance.transform.position = transform.position;
         }
