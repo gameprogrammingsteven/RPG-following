@@ -214,6 +214,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1348683813, guid: b7556fd241337bb43bd836121c4f088e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.12
+      objectReference: {fileID: 0}
     - target: {fileID: 1456328684230514090, guid: b7556fd241337bb43bd836121c4f088e, type: 3}
       propertyPath: sceneToUse
       value: Tut
@@ -224,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456328684230514093, guid: b7556fd241337bb43bd836121c4f088e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.59
+      value: -11.47
       objectReference: {fileID: 0}
     - target: {fileID: 1456328684230514093, guid: b7556fd241337bb43bd836121c4f088e, type: 3}
       propertyPath: m_LocalPosition.y

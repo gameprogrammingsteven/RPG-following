@@ -6,10 +6,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
-    public float playerSpeed = 800;
+    public float playerSpeed = 800f;
 
     public Animator animator;
     public static PlayerController instance;
+    public string fromScene;
 
     bool safeCheck = false;
     // Start is called before the first frame update
